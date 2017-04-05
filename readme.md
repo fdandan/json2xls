@@ -56,6 +56,12 @@ As a second parameter to `json2xls` or a third parameter to `res.xls`, a map of 
     var xls = json2xls(json, options);
     res.xls('data.xlsx', jsonArr, options);
 
+The options is an array-object, each item is for excel sheet configiture:
+    - [{
+        style: '',
+        fields: [] / {}
+    },{}]
+
 The following options are supported:
 
     - style: a styles xml file, see <https://github.com/functionscope/Node-Excel-Export>
@@ -74,13 +80,13 @@ Example:
     }
 
     //export only the field 'poo'
-    var xls = json2xls(json,{
+    var xls = json2xls(json,[{
         fields: ['poo']
-    });
+    }]);
 
     //export only the field 'poo' as string
-    var xls = json2xls(json,{
+    var xls = json2xls(json,[{
         fields: {poo:'string'}
-    });
+    }]);
 
     fs.writeFileSync('data.xlsx', xls, 'binary');
