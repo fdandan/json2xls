@@ -57,7 +57,8 @@ As a second parameter to `json2xls` or a third parameter to `res.xls`, a map of 
     res.xls('data.xlsx', jsonArr, options);
 
 The options is an array-object, each item is for excel sheet configiture:
-    - [{
+    
+    [{
         style: '',
         fields: [] / {}
     },{}]
